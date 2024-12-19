@@ -8,8 +8,9 @@ const ProductPage = () => {
 
   const bandColors = {
     black: "../public/images/black.jpg",
-    purple: "../public/images/blue.jpg",
-    gray: "../public/images/cyan.jpg",
+    green: "../public/images/green.jpg",
+    blue: "../public/images/blue.jpg",
+    cyan: "../public/images/cyan.jpg",
   };
 
   const handleAddToCart = () => {
@@ -29,7 +30,7 @@ const ProductPage = () => {
             />
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1 text-start">
             <h1 className="text-3xl font-semibold mb-2">
               Classy Modern Smart Watch
             </h1>
@@ -37,19 +38,23 @@ const ProductPage = () => {
               ⭐⭐⭐⭐⭐ (20 Reviews)
             </p>
             <div className="text-2xl font-bold text-blue-500 mb-4">
-              $79.00 <span className="line-through text-gray-500">$99.00</span>
+              <span className="line-through text-gray-500">$99.00</span> $79.00
             </div>
             <p className="text-gray-600 mb-6">
-              I must explain to you how all this mistaken idea of denouncing
-              pleasure...
+              I must explain to you how all this mistaken idea of denoun cing
+              ple praising pain was born and I will give you a complete account
+              of the system, and expound the actual teaching.
             </p>
-
-            <p className="text-gray-600 text-sm mb-2">
-              <span className="font-bold">Type:</span> Watch
-            </p>
-            <p className="text-gray-600 text-sm mb-6">
-              <span className="font-bold">Model Number:</span> P298XT
-            </p>
+            <div className="flex gap-8">
+              <div>
+                <p className="text-gray-600 text-sm mb-2">Type:</p>
+                <p className="font-bold text-[#364A63]">Watch</p>
+              </div>
+              <div>
+                <p className="text-gray-600 text-sm mb-2">Model Number:</p>
+                <p className="font-bold text-[#364A63]">P298XT</p>
+              </div>
+            </div>
 
             <div className="mb-6">
               <h3 className="text-lg font-medium mb-2">Band Color</h3>
