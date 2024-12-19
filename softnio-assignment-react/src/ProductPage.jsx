@@ -12,6 +12,24 @@ const ProductPage = () => {
     blue: "../public/images/blue.jpg",
     cyan: "../public/images/cyan.jpg",
   };
+  const size = [
+    {
+      size: "S",
+      price: "69",
+    },
+    {
+      size: "M",
+      price: "79",
+    },
+    {
+      size: "L",
+      price: "89",
+    },
+    {
+      size: "XL",
+      price: "99",
+    },
+  ];
 
   const handleAddToCart = () => {
     setCartCount(cartCount + 1);
@@ -26,10 +44,10 @@ const ProductPage = () => {
             <img
               src={bandColors[selectedColor]}
               alt="Smartwatch"
-              className="w-full h-auto rounded-lg"
+              className="w-[630px] h-[720px]"
             />
           </div>
-
+          <div></div>
           <div className="flex-1 text-start">
             <h1 className="text-3xl font-semibold mb-2">
               Classy Modern Smart Watch
@@ -45,7 +63,7 @@ const ProductPage = () => {
               ple praising pain was born and I will give you a complete account
               of the system, and expound the actual teaching.
             </p>
-            <div className="flex gap-8">
+            <div className="flex gap-8 ">
               <div>
                 <p className="text-gray-600 text-sm mb-2">Type:</p>
                 <p className="font-bold text-[#364A63]">Watch</p>
@@ -75,50 +93,59 @@ const ProductPage = () => {
             <div className="mb-6">
               <h3 className="text-lg font-medium mb-2">Wrist Size</h3>
               <div className="flex space-x-2">
-                {["S (16)", "M (17)", "L (18)", "XL (19)"].map(
-                  (size, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setSelectedSize(size)}
-                      className={`px-4 py-2 border rounded-lg ${
-                        selectedSize === size
-                          ? "border-blue-500"
-                          : "border-gray-300"
-                      }`}
-                    >
-                      {size}
-                    </button>
-                  )
-                )}
+                {size.map((size, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedSize(size.size)}
+                    className={`px-4 py-2 border  ${
+                      selectedSize === size.size
+                        ? "border-blue-500"
+                        : "border-gray-300"
+                    }`}
+                  >
+                    <div className="flex gap-2">
+                      <h1 className="font-bold">{size.size}</h1>
+                      <p>{size.price}</p>
+                    </div>
+                  </button>
+                ))}
               </div>
             </div>
 
-            <button
-              onClick={handleAddToCart}
-              className="w-full py-3 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition"
-            >
-              Add to Cart
-            </button>
+            <div className="flex gap-4">
+              <div className="border-2 flex">
+                <button
+                  onClick={() =>
+                    setCartCount(cartCount > 0 ? cartCount - 1 : 0)
+                  }
+                  className="px-2 py-1 bg-white text-[#8091A7] rounded-lg text-2xl w-9 h-8"
+                >
+                  -
+                </button>
+                <div className="px-10 py-1  bg-white text-[#8091A7] text-2xl border-l-2 border-r-2 ">
+                  {cartCount}
+                </div>
+                <button
+                  onClick={() => setCartCount(cartCount + 1)}
+                  className="px-2 py-1 bg-white text-[#8091A7] rounded-lg text-2xl w-9 h-8"
+                >
+                  +
+                </button>
+              </div>
+
+              <button
+                onClick={handleAddToCart}
+                className="w-[155px] h-[46px] py-2 px-5 bg-blue-500 text-white font-medium rounded-sm hover:bg-blue-600 transition"
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {showCheckout && (
-        <div className="fixed bottom-4 right-4 flex items-center bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg">
-          <button
-            onClick={() => setCartCount(cartCount > 0 ? cartCount - 1 : 0)}
-            className="px-2 py-1 bg-white text-orange-500 rounded-lg"
-          >
-            -
-          </button>
-          <span className="mx-4">{cartCount}</span>
-          <button
-            onClick={() => setCartCount(cartCount + 1)}
-            className="px-2 py-1 bg-white text-orange-500 rounded-lg"
-          >
-            +
-          </button>
-        </div>
+        <div className="fixed bottom-4 right-4 flex items-center bg-orange-500 text-white px-4 py-2 rounded-lg shadow-lg"></div>
       )}
     </div>
   );
