@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import Star from "./Star";
+import black from "./assets/images/black.jpg";
+import green from "./assets/images/green.jpg";
+import blue from "./assets/images/blue.jpg";
+import cyan from "./assets/images/cyan.jpg";
 
 const ProductPage = () => {
   const [selectedColor, setSelectedColor] = useState("black");
@@ -10,10 +14,10 @@ const ProductPage = () => {
   const [showCartModal, setShowCartModal] = useState(false);
 
   const bandColors = {
-    black: "../public/images/black.jpg",
-    green: "../public/images/green.jpg",
-    blue: "../public/images/blue.jpg",
-    cyan: "../public/images/cyan.jpg",
+    black: black,
+    green: green,
+    blue: blue,
+    cyan: cyan,
   };
 
   const customColors = {

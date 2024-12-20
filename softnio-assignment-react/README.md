@@ -1,8 +1,29 @@
-# React + Vite
+# Watch Shopping Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web application for browsing and purchasing watches online by react.js.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Users can dynamically change the product thumbnail image by selecting different color options.
+- Add products to the cart with a single click.
+- A floating checkout button appears when an item is added to the cart, displaying the total quantity of items.
+- Clicking the checkout button opens a modal that previews all added items.
+- The cart modal dynamically updates with product details, including:
+  - Product image
+  - Selected color
+  - Size
+  - Quantity
+  - Price
+
+## Technologies Used
+
+- **React**
+- **Tailwind**
+
+## Demo
+
+Check out the live version here: [Watch Shopping Page](https://tourmaline-flan-a68200.netlify.app/)
+
+```
+
+```
