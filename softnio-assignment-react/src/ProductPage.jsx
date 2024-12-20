@@ -77,7 +77,7 @@ const ProductPage = () => {
                 Classy Modern Smart Watch
               </h1>
               <p className="text-gray-600 text-sm mb-4">
-                <Star></Star> (20 Reviews)
+                <Star></Star> (2 Reviews)
               </p>
               <div className="text-2xl font-bold text-[#6576FF] mb-4">
                 <span className="text-xl line-through font-normal text-[#8091A7]">
@@ -195,7 +195,7 @@ const ProductPage = () => {
       )}
       {showCartModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white w-[500px] rounded-lg shadow-lg">
+          <div className="bg-white md:[400px] md:w-[800px] rounded-lg shadow-lg">
             <div className="p-6">
               <h2 className="text-lg font-semibold mb-4 border-b pb-2">
                 Your Cart
@@ -204,18 +204,28 @@ const ProductPage = () => {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="text-left text-gray-500 text-sm border-b">
-                      <th className="py-2">Item</th>
-                      <th className="py-2">Color</th>
-                      <th className="py-2">Size</th>
-                      <th className="py-2">Qnt</th>
-                      <th className="py-2">Price</th>
+                      <th className="py-2 text-[#8091A7] text-sm font-normal">
+                        Item
+                      </th>
+                      <th className="py-2 text-[#8091A7] text-sm font-normal">
+                        Color
+                      </th>
+                      <th className="py-2 text-[#8091A7] text-sm font-normal">
+                        Size
+                      </th>
+                      <th className="py-2 text-[#8091A7] text-sm font-normal">
+                        Qnt
+                      </th>
+                      <th className="py-2 text-[#8091A7] text-sm font-normal">
+                        Price
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {cart.map((item, index) => (
                       <tr
                         key={index}
-                        className="text-sm text-gray-700 border-b"
+                        className="text-sm text-[#364A63] border-b"
                       >
                         <td className="py-2 flex items-center">
                           <img
@@ -225,10 +235,10 @@ const ProductPage = () => {
                           />
                           Classy Modern Smart Watch
                         </td>
-                        <td className="py-2">{item.color}</td>
-                        <td className="py-2">{item.size}</td>
-                        <td className="py-2">{item.quantity}</td>
-                        <td className="py-2">${item.price}</td>
+                        <td className="py-2 ">{item.color}</td>
+                        <td className="py-2 font-bold">{item.size}</td>
+                        <td className="py-2 font-bold">{item.quantity}</td>
+                        <td className="py-2 font-bold">${item.price}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -236,10 +246,15 @@ const ProductPage = () => {
               </div>
               <div className="border-t mt-4 pt-4">
                 <div className="flex justify-between text-gray-700 font-medium mb-2">
-                  <span>Total</span>
-                  <span>
-                    ${cart.reduce((total, item) => total + item.price, 0)}
-                  </span>
+                  <span className="font-bold">Total</span>
+                  <div>
+                    <span className="mr-6 font-bold ">
+                      {cart.reduce((total, item) => total + item.quantity, 0)}{" "}
+                    </span>
+                    <span className="mr-12 font-bold text-2xl">
+                      ${cart.reduce((total, item) => total + item.price, 0)}
+                    </span>
+                  </div>
                 </div>
                 <div className="flex justify-end gap-4">
                   <button
